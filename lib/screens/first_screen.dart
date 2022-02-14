@@ -5,7 +5,7 @@ import '../helpers/ad_manager.dart';
 
 class FirstScreen extends StatelessWidget {
   FirstScreen({Key? key, required this.title}) : super(key: key) {
-    adManager.addAds(true, true);
+    adManager.addAds(true, true, true);
   }
 
   final String title;
@@ -36,6 +36,13 @@ class FirstScreen extends StatelessWidget {
               adManager.showInterstitial();
             },
             child: const Text('Show Interstitial'),
+          ),
+          const SizedBox(height: 32),
+          ElevatedButton(
+            onPressed: () {
+              adManager.showRewardedAd();
+            },
+            child: const Text('Show Rewarded Ad'),
           ),
           const SizedBox(height: 32),
           Container(
